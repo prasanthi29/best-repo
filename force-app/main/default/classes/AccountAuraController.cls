@@ -1,5 +1,5 @@
 public class AccountAuraController {
-    @AuraEnabled
+        @AuraEnabled
     public static List<String> getIndustry(){
         List<String> options = new List<String>();
         Schema.DescribeFieldResult fieldResult = Account.Industry.getDescribe();
