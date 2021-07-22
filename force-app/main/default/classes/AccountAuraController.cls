@@ -1,4 +1,5 @@
 public class AccountAuraController {
+    //added latest changes
         @AuraEnabled
     public static List<String> getIndustry(){
         List<String> options = new List<String>();
