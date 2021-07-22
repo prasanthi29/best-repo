@@ -1,0 +1,42 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="contactName" type="String"/>
+    <aura:attribute name="accountName" type="String"/>
+    <aura:attribute name="email" type="String"/>    
+   <div style="padding: 1rem;">
+  <div class="slds-align_absolute-bottom" style="text-align: center; width: 812rem; background-color: rgb(255, 255, 255);">
+    <div class="slds-border_top">This should have a top border.</div>
+  </div>
+     <table class="myClass slds-table slds-table--bordered slds-table--cell-buffer" align="border" >
+    <thead>
+    <tr class="slds-text-heading--label">
+        <th scope="col">   </th></tr></thead></table>
+
+      <tr class="slds-text-title_caps">
+          <th scope="col" class=""></th></tr>
+    <article class="slds-tile">
+       <th scope="col" class="">
+        <h3 class="slds-tile__title slds-truncate" title="Contacts UX"><a href="javascript:void(0);">Contacts UX</a></h3><br></br>
+        </th>
+           <div class="slds-tile__detail">
+           <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Contact Name:</dt><br></br>
+
+                <dd class="slds-item_detail slds-truncate" title="Description for first label">{!v.contactName}</dd><br></br>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">Account Name:</dt><br></br>
+
+                <dd class="slds-item_detail slds-truncate" title="Description for second label">{!v.accountName}</dd><br></br>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Third Label">Email:</dt><br></br>
+
+                <dd class="slds-item_detail slds-truncate" title="Description for Third label">{!v.email}</dd><br></br>         
+
+                </dl>
+
+    </div>
+
+    </article>
+
+  </div>
+
+</aura:component>

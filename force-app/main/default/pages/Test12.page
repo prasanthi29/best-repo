@@ -1,0 +1,22 @@
+<apex:page controller="Googlequery">
+
+  
+
+  <apex:pagemessages />
+
+  <apex:form >
+
+   
+   <apex:pageBlock >
+
+     <apex:outputLabel >Query Google</apex:outputLabel>
+
+     <apex:inputText value="{!qry}"/>
+
+    </apex:pageBlock>
+
+   <apex:commandButton value="Search keyword" action="{!searchpage}"/>
+
+  </apex:form>
+
+</apex:page>

@@ -1,0 +1,33 @@
+<apex:page standardController="Account" extensions="CreateContactFromAccountController">
+
+    <apex:form >
+
+        <apex:pageBlock >
+
+            <apex:pageBlockSection >
+
+                <apex:inputField value="{!con.FirstName}"/>
+
+                <apex:inputField value="{!con.LastName}"/>
+
+                <apex:inputField value="{!con.AccountId}"/>
+                <apex:inputField value="{!con.MailingStreet}"/>
+                <apex:inputField value="{!con.MailingCity }"/>
+                <apex:inputField value="{!con.MailingState}"/>
+                <apex:inputField value="{!con.MailingCountry}"/>
+                <apex:inputField value="{!con.MailingPostalCode }"/>
+
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockButtons >
+
+                <apex:commandButton value=" Save Contact" action="{!saveContact}"/>
+
+            </apex:pageBlockButtons>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

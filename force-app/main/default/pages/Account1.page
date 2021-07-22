@@ -1,0 +1,54 @@
+<apex:page standardController="Account" recordSetVar="accounts" tabstyle="account" sidebar="false" extensions="DisplayContact">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <apex:pageBlock title="Account" >
+    <apex:form id="frm">
+  <!--   <apex:actionFunction name="CallApexMethod" action="{!ContactLists}" rerender="contactDetails,contactDetails1,contactDetails2,contactDetails3" id="acfunc"><apex:param name="id" value="" assignTo="{!id}"/></apex:actionFunction>
+      --><apex:pageBlockTable value="{!accounts}" var="a" id="list">
+        <apex:column headerValue="Account Name" id="tt1">
+        <apex:commandLink rerender="contactDetails,contactDetails1,contactDetails2,contactDetails3" value=" {!a.Name}" action="{!ContactLists}">   
+  
+     <apex:param name="id" value="{!a.id}"/> 
+       </apex:commandLink> 
+      
+         </apex:column>
+       <apex:column headerValue="Type"> {!a.type}<br/>
+       <apex:outputPanel id="contactDetails1">
+   
+     </apex:outputPanel>
+     </apex:column>
+   
+        <apex:column headerValue="Billing Street">{!a.billingstreet}
+        <br/>
+       <apex:outputPanel id="contactDetails2">
+    
+     </apex:outputPanel>
+     </apex:column>
+        <apex:column headerValue="Billing city">
+        {!a.billingCity}
+        <br/>
+       <apex:outputPanel id="contactDetails3">
+    
+     </apex:outputPanel>
+     </apex:column>
+     
+        <apex:column value="{!a.billingCountry}" />
+        <apex:column value="{!a.billingPostalCode}"/>
+        <apex:column value="{!a.createdById}"/>
+      </apex:pageBlockTable>
+      
+    </apex:form>
+   
+  </apex:pageBlock>
+  <apex:pageBlock title="Contact">
+   <apex:outputPanel id="contactDetails">
+     <apex:pageBlockTable value="{!conList}" var="con" id="conlist" title="Contact">
+     <apex:column value="{!con.Name}"/>
+     <apex:Column value="{!con.Phone}" />
+     <apex:Column value="{!con.Email}" />
+     </apex:pageBlockTable>
+    </apex:outputPanel>
+  </apex:pageBlock>
+   
+</apex:page>

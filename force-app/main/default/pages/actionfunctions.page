@@ -1,0 +1,10 @@
+<apex:page controller="sampleaccount">
+ <apex:form >
+  <apex:pageBlockSection >
+ <apex:actionFunction name="accountFunction" action="{!createAccount}" rendered="form"/>
+ <apex:commandButton value="{!createAccount}" onclick="accountFunction()"/>
+ 
+ </apex:pageBlockSection>
+ 
+ </apex:form>
+</apex:page>

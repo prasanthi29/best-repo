@@ -1,0 +1,19 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+    <div class="vlocity via-slds" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-app="ContractRenew">
+        
+            str Type="Contract"
+            str SubType="Renew"
+            str Lang="English"
+            previewMode="{!$CurrentPage.parameters.previewEmbedded}"
+            verticalMode="{!$CurrentPage.parameters.verticalMode}"
+            str Id="{!$CurrentPage.parameters.designerPreviewId}"
+            scriptLayout="lightning"
+            
+        <script type="text/javascript">
+           
+            var myModule = angular.module('ContractRenew', modules);
+        </script>
+
+    </div>
+    
+</apex:page>

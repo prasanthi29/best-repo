@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <!--
+	/**
+         * Webkul Software.
+         *
+         * @category  Webkul
+         * @author    Webkul
+         * @copyright Copyright (c) 2010-2016 Webkul Software Private Limited (https://webkul.com)
+         * @license   https://store.webkul.com/license.html
+         */
+	-->
+    <!-- You can use lightning data service for getting record Id from page. -->
+    <aura:attribute name="AccountId" type="String" default="0017F00000qozcO" description="Record to which the files should be attached" />
+    <div class="wrapper">
+    	<lightning:fileUpload label="Upload Attachments" 
+        multiple="true" 
+        accept=".pdf, .png"
+        recordId="{!v.edgeRecordId}" 
+        onuploadfinished="{!c.handleAfterUpload}" />
+    </div>
+</aura:component>

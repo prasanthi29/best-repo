@@ -1,0 +1,47 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+     <aura:attribute name="Name" type="String" default="" />
+     
+    <aura:attribute name="Mobile" type="Integer" default="" />
+    <aura:attribute name="Email" type="String" default="" />
+    <aura:attribute name="Address" type="String" default="" />
+    <aura:attribute name="City" type="String" default="" />
+    <aura:attribute name="LandMark" type="String" default="" />
+    <aura:attribute name="Locality" type="String" default="" />
+     <aura:attribute name="Submit" type="String" default="" />
+   
+    <div class="slds-page-header">
+    	<div class="slds-align_absolute-center">
+            <div class="slds-text-heading_large">
+                <div class="slds-m-top_xx-large">
+    				 Registration Form
+                </div>
+            </div>
+    	</div>
+    </div>
+    <br/>
+    
+    
+    <br/>
+    
+    <div class="slds-size_3-of-12">
+    <lightning:input label=" Name" name="name" value="{!v.Name}" />
+    <br/>
+    <lightning:input label="Mobile" type="Mobile" value="{!v.Mobile}"></lightning:input>
+    <br/>
+    <lightning:input label="Email" type="email" name="email" value="{!v.Email}" />
+    <br/>
+    <lightning:input label="Address" name="Address" value="{!v.Address}" />
+    <br/>
+    
+     <lightning:input label="City" name="City" value="{!v.City}" />
+    <br/>   
+    <lightning:input label="Locality" name="Locality" value="{!v.Locality}" />
+        
+    <br/>
+       <lightning:input label="LandMark" name="LandMark" value="{!v.LandMark}" />
+        
+    <br/>  
+    <lightning:button label="Submit" onclick="{!c.RegistrationForm}"></lightning:button>
+</div>
+    </aura:component>

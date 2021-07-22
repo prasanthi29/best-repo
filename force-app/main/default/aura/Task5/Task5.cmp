@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+     <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="task" type="task" default="{}" />
+    <aura:attribute name="Task5" type="task" default="[]"/>
+    <div class="slds-grid">
+        <lightning:input type="text" label="Task Name" name="taskname" value="{!v.task.Subject}" class="slds-size_1-of-2"/>
+        <lightning:buttonIcon iconName="utility:add" variant="bare" iconClass="dark" size="large" onclick="{!c.addItem}"/>
+       
+        <c:taskDataTable Task5="{!v.Task5}"/>  
+    
+    </div>
+      
+</aura:component>

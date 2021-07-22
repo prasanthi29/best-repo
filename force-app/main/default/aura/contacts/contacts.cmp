@@ -1,0 +1,117 @@
+<aura:component controller="ContactController1">
+
+    <aura:attribute name="listofcontacts" type="contact[]"/>
+    
+	<aura:attribute name="newContact" type="Contact"
+                    default="{  'sobjectType': 'Contact',
+                                'FirstName': '',
+                             'LastName': '',
+                             'Email': '',
+                             'Phone': '',
+                                }" />    
+    <aura:attribute  name="recordId" type="string"/>
+    <!--aura:handler name="init" value="{!this}" action="{!c.init}"/-->
+           
+  
+    <!-- PAGE HEADER -->
+    <lightning:layout class="slds-page-header slds-page-header--object-home">
+        <lightning:layoutItem>
+            <lightning:icon iconName="standard:scan_card" alternativeText="My Contact"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Contacts</h1>
+                <h2 class="slds-text-heading--medium">Contacts Form</h2>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- / PAGE HEADER -->
+<div class="slds-page-header">
+    	<div class="slds-align_absolute-center">
+            <div class="slds-text-heading_large">
+                <div class="slds-m-top_xx-large">
+    				Contact Form
+                </div>
+            </div>
+    	</div>
+    </div>
+    <br/>
+    
+    <div class="slds-size_3-of-12">
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="11">
+        <lightning:input aura:id="contactField" name="firstName" label="First Name"
+
+                      value="{!v.newContact.FirstName}" required="true"/><br/>
+
+  
+
+    <lightning:input aura:id="contactField" name="lastname" label="Last Name"
+
+                     value="{!v.newContact.LastName}" required="true"/><br/>
+
+             
+      <lightning:input aura:id="contactField" type="phone" name="phone" label="Phone Number"
+
+               value="{!v.newContact.Phone}" required="true"/><br/>
+
+     
+
+    <lightning:input aura:id="contactField" type="email" name="email" label="Email"
+
+                     value="{!v.newContact.Email}" required="true" /><br/>
+
+         
+
+            <!--<lightning:button label="Cancel" onclick="{!c.handleCancel}" class="slds-m-top_medium" /><br/>-->
+
+    <lightning:button label="Submit" onclick="{!c.contacts}"
+
+               variant="brand" class="slds-m-top_medium"/>
+             <lightning:button label="clear" onclick="{!c.clear
+                                                      }"
+
+               variant="brand" class="slds-m-top_medium"/>
+
+        </lightning:layoutItem>
+    </lightning:layout>
+    </div>
+    
+    <lightning:card title="List of Contacts">
+        <lightning:recordForm  aura:id="EditForm" recordId="{!v.newContact.Id}" objectApiName="Contact"  mode="view"/>	
+        <table>
+ <lightning:layout>
+                    <a onclick="{!c.navToRecord}">
+                        <h3 class="slds-text-heading_small slds-m-bottom_xx-small">{!v.newContact.FirstName}</h3>
+                    </a>
+                   
+                             
+                        <lightning:buttonIcon iconName="utility:edit" class="slds-col_bump-right" iconClass="slds-button__icon_hint" variant="bare" alternativeText="Edit Record" onclick="{!c.editRecord}"/>
+             </lightning:layout>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <!-- <div class="slds-media__body">-->
+                
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.listofcontacts}" var="c">
+                        <tr>
+                                                         <td>{!c.FirstName}</td>
+                           
+                                 <td>{!c.LastName}</td>
+                            <td>{!c.Email}</td>
+                            <td>{!c.Phone}</td>
+                            
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+        	</table>
+     
+    </lightning:card>
+   
+</aura:component>

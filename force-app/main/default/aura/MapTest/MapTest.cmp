@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="markMaps" type="Object"/>
+    <aura:attribute name="ZoomVisibles" type="Integer"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <lightning:map  markMaps="{!v.markMaps}"/>
+    <lightning:map ZoomVisibles="{!v.ZoomVisibles}"/>
+</aura:component>

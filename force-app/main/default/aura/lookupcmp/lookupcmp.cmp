@@ -1,0 +1,21 @@
+<aura:component>
+<aura:attribute name="selectedLookUpRecord" type="contact"/>
+  <aura:attribute name="label" type="string" default=""/>
+  <aura:attribute name="objectAPIName" type="string" default=""/>
+    <aura:attribute name="selectedRecord" type="string" default=""/>
+    <aura:attribute name="IconName" type="string" default=""/>
+    <aura:attribute name="cont" type="Contact" />
+    <!--   <lightning:icon iconName="standard:user" size="large" alternativeText="Test"/>-->
+    <div class="slds-size_8-of-8" >
+
+
+    <label class="slds-float_left">
+        <span style="color:red;" align="left">*</span>Account Name: 
+    </label>
+                  
+          <c:lookupcmp objectAPIName="contact" IconName="standard:contact" selectedRecord="{!v.selectedLookUpRecord}" label=""/>
+
+</div>
+<lightning:button onclick="{!c.save}" label=" Save record">
+</lightning:button>
+</aura:component>

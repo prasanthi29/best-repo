@@ -1,0 +1,12 @@
+<aura:component>
+<lightning:buttonMenu class="setting_icon" variant="container" aura:id="menu"
+                                          alternativeText="Show menu" iconName="utility:settings"
+                                          iconSize="medium" onselect="{!c.handleSelect}">
+    <!--<lightning:menuItem href="{!v.Help}" label="Help" value="help" />-->
+                         <lightning:menuItem label="Help" value="Help" />
+    <div class="slds-button-group" role="group">
+  <button class="slds-button slds-button_neutral">Help</button>
+    </div>
+                        <lightning:menuItem label="HelpEmail" value="HelpEmail" />
+                    </lightning:buttonMenu>
+</aura:component>

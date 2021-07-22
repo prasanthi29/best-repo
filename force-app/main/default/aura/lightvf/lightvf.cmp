@@ -1,0 +1,6 @@
+<aura:component>
+<div>
+    
+    <h1>lighting component</h1>
+    </div>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component controller="contactsRows">
+
+    <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+   
+        <aura:iteration items="{!v.contacts}" var="contact">
+            <li>
+                <a href="{! '#/sObject/' + contact.Id + '/view'}">
+                    <p>{!contact.Name}</p>
+                    <p>{!contact.Phone}</p>
+                </a>
+            </li>
+        </aura:iteration>
+ 
+</aura:component>

@@ -1,0 +1,70 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	    <aura:handler name="init" value="{!this}" action="{!c.doInitialization}"/>
+     <aura:attribute name="contactList" type="list" />
+     <aura:attribute name="finalListToAdd" type="list" />
+     <aura:attribute name="contactListPaginateWise" type="list" />
+    <aura:attribute name="navigateType" type="string" default="initialLoad"/>
+    <aura:attribute name="totalRecords" type="integer" />
+    <aura:attribute name="pageNumber" type="integer" />
+    <aura:attribute name="lastPageNumber" type="integer" />
+ 
+ <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+  <thead>
+    <tr >
+      <div class="slds-form-element">
+          <div class="slds-form-element_control">
+            <label class="slds-checkbox">
+                <ui:inputCheckbox change="{!c.selectDeselectAll}"/>
+              <span class="slds-checkbox_faux"/>
+              <span class="slds-form-element_label"/>
+              </label>
+          </div>
+        </div>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Name">Name</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Title">Title</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Email">Email</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <aura:iteration items="{!v.contactListPaginateWise}" var="a">
+    <tr >
+      <th  scope="row">
+       <div class="slds-form-element">
+          <div class="slds-form-element_control">
+            <label class="slds-checkbox">
+                <ui:inputCheckbox value="{!a.check}"/>
+                <span class="slds-checkbox_faux"/>
+              <span class="slds-form-element_label"/>
+            </label>
+          </div>
+        </div>
+      </th>
+     <th  scope="row">
+        {!a.obj.Name}
+      </th>
+        <th  scope="row">
+        {!a.obj.Title}
+      </th>
+        <th  scope="row">
+        {!a.obj.Email}
+      </th>
+    </tr>
+     </aura:iteration>   
+  </tbody>
+</table>
+    <aura:if isTrue="{!(v.pageNumber!=v.lastPageNumber)}">
+     <lightning:button label="Next" onclick="{!c.goToNext}"/>
+    </aura:if>
+     <aura:if isTrue="{!v.pageNumber!=1}">
+     <lightning:button label="Previous" onclick="{!c.goToPrevious}"/>
+     </aura:if> 
+    <lightning:button label="Add Contacts" onclick="{!c.addAllSelectedContacts}"/>
+    Page {!v.pageNumber} of {!v.lastPageNumber}
+
+</aura:component>

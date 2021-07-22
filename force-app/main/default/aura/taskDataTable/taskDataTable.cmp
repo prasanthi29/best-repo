@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+     <aura:attribute name="Task5" type="List" default="[]"/>
+    <div>
+  <table class="slds-table-table_bordered slds-table_cell-buffer">
+      <thead>
+       <tr class="slds-text-title_caps">
+           <th scope="col">
+          <div>Task Name</div>
+      </th>
+      <th scope="col">
+        <div >Completed</div>
+      </th>
+      </tr>
+      </thead>
+        <tbody>
+      
+      <aura:iteration items="{!v.Task5}" var="task">
+            
+    <tr >
+      <th scope="row">
+        <div class="slds-truncate">
+          <a href="javascript:void(0);">{!task.subject}</a>
+        </div>
+      </th>
+      <td data-label="Account Name">
+        <div>
+          
+            <lightning:input type="checkbox" label="red" name="red" checked="true"/>
+          </div>
+      </td>
+          </tr>
+            </aura:iteration>
+      </tbody>
+        </table>
+    </div>
+
+       
+</aura:component>

@@ -1,0 +1,7 @@
+<apex:page controller="repeat">
+<apex:repeat value="{!Strings}" var="string" id="theRepeat">
+<apex:outputText value="{!String}" id="theValue"/>
+
+</apex:repeat>
+
+</apex:page>

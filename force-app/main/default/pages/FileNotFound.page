@@ -1,0 +1,11 @@
+<apex:page showHeader="false" title="{!$Label.site.file_not_found}" cache="false">
+  <div class="slds-illustration slds-illustration_large" style="text-align:center" aria-hidden="true">
+    <img src="/img/chatter/OpenRoad.svg" style="width:30%;" class="slds-illustration__svg" alt=""/>
+    <div class="slds-text-color_weak">
+        <center>
+        <h3 class="slds-text-heading_medium">404 ERROR</h3>
+         <p>That page doesn't seem to exist</p>
+       </center>
+    </div>
+</div>
+</apex:page>

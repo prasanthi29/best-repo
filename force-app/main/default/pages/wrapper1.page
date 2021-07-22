@@ -1,0 +1,17 @@
+<apex:page controller="WrapperDemoController">
+
+    <apex:pageBlock >
+<apex:pageBlockSection title="Contact" columns="3">
+        <apex:pageBlockTable value="{!RowList}" var="row">
+
+            <apex:column value="{!row.Name}" colspan="2" headerValue="Name" />
+
+            <apex:column value="{!row.Phone}" headerValue="Phone"/>
+
+            <apex:column value="{!row.Company}" headerValue="Company"/>
+
+        </apex:pageBlockTable>  
+</apex:pageBlockSection>
+    </apex:pageBlock>
+
+</apex:page>

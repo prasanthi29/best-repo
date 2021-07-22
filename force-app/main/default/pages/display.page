@@ -1,0 +1,56 @@
+<apex:page standardController="Contact" recordSetVar="contacts">
+<apex:form >
+<apex:pageBlock title="Contacts List" id="Contacts_list">
+<apex:selectList value="{!filterId}" size="1">
+<apex:selectOptions value="{!listviewOptions}"/>
+<apex:actionSupport event="onchange" reRender="Contacts_list"/>
+ </apex:selectList>
+
+
+
+ 
+
+
+
+
+ 
+<apex:pageBlockTable value="{!contacts}" var="con">
+<apex:column value="{!con.Name}"/>
+<apex:column value="{!con.Account.name}"/>
+
+
+</apex:pageBlockTable>
+
+<apex:commandLink value="Next" action="{!Next}" reRender="{!hasNext}"/>&nbsp;
+<apex:commandLink value="Previous" action="{!Previous}" reRender="{!hasPrevious}"/>&nbsp;
+<table style="width:100%"><tr>
+<td></td>
+<td align="center"></td>
+
+
+
+
+<td align="right" >Records for Page<apex:selectList value="{!PageSize}" size="1">
+
+
+
+<apex:selectOption itemValue="5" itemLabel="5"/>
+<apex:selectOption itemValue="20" itemLabel="20"/>
+<apex:actionSupport event="onchange" reRender="Contacts_list"/>
+
+ </apex:selectList></td>
+</tr>
+</table>
+
+
+
+Page:<apex:outputText value=" {!PageNumber} of {! CEILING(ResultSize / PageSize) }"/>
+
+
+
+
+
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

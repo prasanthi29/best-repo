@@ -1,0 +1,18 @@
+<apex:page controller="dependcustompicklist">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Country Name">
+                <apex:selectList value="{!selectcountry}" label="Country" size="1">
+                    <apex:selectOptions value="{!country}" rendered="true"/>
+                    <apex:actionSupport event="onchange" reRender="cu"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="City Name" id="cu">
+                <apex:selectList value="{!selectcity}" label="City" size="1" disabled="{!ISNULL(country)}">
+                    <apex:selectOptions value="{!city}" rendered="true"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

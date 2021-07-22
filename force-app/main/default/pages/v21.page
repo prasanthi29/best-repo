@@ -1,0 +1,11 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+<apex:form id="theform">
+<apex:pageBlock title="Account view page">
+<apex:dataList var="account" value="{!account.name}" type="2"></apex:dataList>
+<apex:panelGrid columns="2"> 
+
+</apex:panelGrid>
+</apex:pageBlock>
+
+ </apex:form> 
+</apex:page>

@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <lightning:card title="Add account">
+        <div class="slds-p-around_medium">
+            <lightning:recordEditForm objectApiName="Account" aura:id="createAccountForm" onsubmit="{!c.handleSubmit}">
+                <lightning:messages/>
+                <lightning:inputField fieldName="Name"/><br></br>
+                <lightning:inputField fieldName="Phone"/><br></br>
+                <div class="slds-p-vertical_x-small">
+                     <dt class="slds-item_label slds-text-color_weak slds-truncate">Description</dt>
+                     <dd class="slds-item_detail slds-truncate">This is a default description</dd>
+                </div>
+                <lightning:inputField fieldName="Website"/>
+                <lightning:button type="submit" name="Submit" label="submit" class="slds-m-top_medium"/>
+            </lightning:recordEditForm>
+        </div>
+    </lightning:card>
+</aura:component>

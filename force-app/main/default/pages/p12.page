@@ -1,0 +1,60 @@
+<apex:page controller="TestingVAT">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:PageBlockSectionItem >
+                    Enter Country Code<apex:inputText value="{!strCountryCode}"  />
+                </apex:PageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Enter VAT Number<apex:inputText value="{!strVATNum}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Check VAT" action="{!checkVAT}" reRender="infoblock"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+        
+    <apex:outputPanel id="infoblock">
+        <apex:pageBlock rendered="{!NOT(ISBLANK(vatNumber))}" >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    Country Code
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    {!countryCode}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    VAT Number
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    {!vatNumber}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Request Date
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    {!requestDate}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Valid
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    {!valid}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Name
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    {!name}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Address
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    {!address}
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:outputPanel>
+</apex:page>

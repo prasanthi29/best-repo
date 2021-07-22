@@ -1,0 +1,5 @@
+<aura:component implements="force.appHostable" access="global" >
+	<div>
+    hello world
+    </div>
+</aura:component>

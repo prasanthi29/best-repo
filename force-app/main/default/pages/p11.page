@@ -1,0 +1,4 @@
+<apex:page controller="NextPageController1">
+Account Id is {!accountId}<br/>
+Account Name is {!AccountName}
+</apex:page>

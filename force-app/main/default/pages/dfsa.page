@@ -1,0 +1,9 @@
+<apex:page standardController="Contact" id="page">
+<script type='text/javascript'>
+   window.onload=function() { 
+      var l = document.getElementById('page:form1:acc_lkwgt'); 
+      // document.getElementById('page:form1:acc_lkwgt').click(); 
+      l.click(); 
+   }
+</script>
+</apex:page>

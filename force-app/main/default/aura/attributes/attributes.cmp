@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+   
+    <aura:attribute name="Whom" type="String" default="sfdc partner" access="public"/>
+    <aura:attribute name="age" type="Integer" access="public"/>
+
+    <aura:attribute name="contactobject" type="contact" access="public"/>
+    <lightning:button value="base" label="Component"  onclick="{!c.doClick}"/>
+    <div>
+    {!v.Contact.name}
+        {!v.Whom},age:{!v.age}
+        <lightning:input aura:id="test value" lable="enter age"/>
+    </div>
+</aura:component>

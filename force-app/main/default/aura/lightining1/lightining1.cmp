@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="phone" type="integer" access="public"/>
+    <aura:attribute name="number2" type="integer" access="public"/>
+    <aura:attribute name="truthy"  type="boolean" default="true"/>
+    <aura:attribute name="colorList" type="List" default="['red','yellow']"/>
+    <aura:attribute name="Map" type="List" />
+    <div class="slds-p-aaround_small">
+                           <aura:if isTrue="{!v.truthy}">
+    True
+    <aura:set attribute="else">
+      False
+    </aura:set>
+  </aura:if> 
+   
+
+
+        <lightning:input type="number" name="phone" label="Enter a number" value="{!v.phone}"/>
+                <lightning:input type="number" name="phone" label="Enter a PERCENTAGE" value="{!v.number2}" formatter="percent-fixed"/>
+    {!v.phone}<br></br>
+        {!v.number2}<br></br>
+        {!div(mult(v.phone, v.number2),100)}
+        
+ 
+         <aura:iteration items="{!v.colorList}" var="item">
+        {!item}
+        </aura:iteration><br/>
+         <aura:iteration items="{!v.Map}" var="map">
+             key is:{!map.key} and value :{!map.value}<br/>
+        </aura:iteration>
+        <lightning:button label="create" onclick="{!c.docreate}"/>
+    </div>
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:component>
+ <aura:attribute name="oppty" type="Opportunity"/>
+ <span> 
+  <a href = "" aura:id="{!v.oppty.Id}" onclick = "{!c.navigateToOppty}">{!v.oppty.Name}</a>
+ </span>   
+ <span>    
+   <a href = "" aura:id="{!v.oppty.AccountId}" onclick = "{!c.navigateToAccount}">{!v.oppty.Account.Name}</a>       
+ </span>  
+</aura:component>
