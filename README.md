@@ -1,2 +1,0 @@
-# best-repo
-thank
